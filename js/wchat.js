@@ -1,7 +1,7 @@
 
 (function(){
     var a;
-    var path = '/ipcc/webchat/';
+    var path = window.location+'/ipcc/webchat/';
     var query = document.URL;
     if(query.indexOf('wchat') != -1) {
         a = ['js/json3.js','js/wchat_settings.js','js/wchat_lang.js','js/wchat_init.js'];

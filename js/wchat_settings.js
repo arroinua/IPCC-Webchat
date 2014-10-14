@@ -2,12 +2,13 @@
 //     Укажите адрес и http порт ipcc сервера в значении опции "server". Напр.: //192.168.1.100:8880 или //www.example.com:8880
 var IPCC_WEBCHAT_SETTINGS = {
     server:         '//server.com:8880', //адрес и HTTP порт ipcc сервера
-    path:           '/ipcc/webchat/', //путь к папке webchat. По умолчанию, должен быть "/ipcc/webchat/"
+    location:       window.location, 
+    path:           this.location+'/ipcc/webchat/', //путь к папке webchat. По умолчанию, должен быть "/ipcc/webchat/"
     userLang:       'ru', //язык веб-сайта поумолчанию. 'ru' -русский 'en' -английский 'uk' -украинский.
     createButton:   true, //создать кнопку чата    
     chatBox:        false, //создать встроенный чат
     regPanel:       true, //создать панель заполнения данных
-    logoSrc:        '/ipcc/webchat/logo.png', //путь к файлу с логотипом
+    logoSrc:        this.location+'/ipcc/webchat/logo.png', //путь к файлу с логотипом
     chatBoxCol:     'rgb(185,42,36)', //цветовая схема встроенного чата
     chatBoxBackgr:  '#eee', //цвет фона встроенного чата
     chatBoxFontFam: 'Arial, Helvetica, sans-serif', //шрифт встроенного чата
