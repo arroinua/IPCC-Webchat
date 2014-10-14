@@ -1,0 +1,212 @@
+html {
+  font-size: 62.5%;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+body {
+  margin: 0;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.428571429;
+  color: #333333;
+  background-color: #ffffff;
+}
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+img {
+  border: 0;
+  vertical-align: middle;
+}
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+button,
+input {
+  line-height: normal;
+}
+button,
+select {
+  text-transform: none;
+}
+
+div.chat-container{
+    position: relative;
+    width: 100%;
+    height: 500px;
+}
+img.company-logo{
+    height: 50px;
+    padding: 10px;
+}
+.wc_closechat_cross{
+    position: absolute;
+    top: 10px;
+    right: 0;
+    padding: 10px;
+    border: 1px dashed #999;
+}
+.cont-panel {
+    position: relative;
+    width: 90%;
+    height: 100%;
+    margin: auto;
+}
+.cont-panel input:not([type="checkbox"]):not([type="file"]){
+    width: 150px;
+}
+.cont-panel div img{
+    width: 25px;
+    padding: 0 5px;
+}
+.cont-panel form{
+    position: inherit;
+    width: 100%;
+    margin: auto;
+}
+.cont-panel form label{
+    position: relative;
+    font-weight: bold;
+}
+.cont-panel form input, select{
+    position: relative;
+    margin-bottom: 10px; 
+}
+.cont-panel textarea{
+    position: inherit;
+    resize: vertical;
+    width: 100%;
+    height: 90px;
+    border-top: 1px solid #999;
+    border-bottom: 1px solid #999;
+    border-left: none;
+    border-right: none;
+    box-sizing: border-box;
+}
+.cont-panel textarea:focus{
+    outline: none;
+    border-top: 1px solid #555;
+    border-bottom: 1px solid #555;
+}
+div.icons-panel{
+    position: relative;
+    width: 100%;
+    margin: 5px 0;
+    padding: 0;
+}
+div.chatfield {
+    position: relative;
+    width: 100%;
+    height: 50%;
+    overflow-y: auto;
+    text-align: left;
+    border-top: 1px solid #999;
+    border-bottom: 1px solid #999;
+}
+div.chatfield p{
+    border-bottom: 1px dashed #eee; 
+    margin: 0;
+    padding: 5px;
+}
+.wc_udate { 
+    color: #999;
+}
+#wc_sessiontimeout div{
+    position: inherit;
+    width: 80%;
+    margin: 50px auto;
+    text-align: center;
+}
+#wc_sessiontimeout div a{
+    position: inherit;
+    display: block;
+    width: 100%;
+    margin: 5px 0;
+    padding: 15px 0;
+    text-decoration: none;
+    text-align: center;
+    background-color: rgb(153,0,0);
+    color: white;
+}
+
+.infobar-container{
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    text-align: center;
+    opacity: 0;
+    pointer-events: none; 
+    -webkit-transition: all .5s ease-in-out;
+    -moz-transition: all .5s ease-in-out;
+    -ms-transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;	
+    z-index: 20;
+}
+.infobar-text{
+    position: relative;
+    padding: 10px 20px;
+    color: #fff;
+    font-size: .9em;
+    background-color: #555;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.wc_tooltip {
+    display: inline;
+    position: relative;
+}
+.wc_tooltip::after {
+    background: #eee;
+    background: rgba(240,240,240,0.9);
+    border: 1px dashed rgb(153,0,0);
+    border-radius: 5px;
+    bottom: 120%;
+    color: rgb(153,0,0);
+    font-size: 0.75em;
+    content: attr(data-title);
+    left: 5px;
+    padding: 5px;
+    position: absolute;
+    z-index: 98;
+    width: 200px;
+}
+.wc_tooltip::before {
+    border: solid;
+    border-color: rgb(153,0,0) transparent;
+    border-width: 8px 8px 0 8px;
+    bottom: 79%;
+    content: "";
+    left: 7px;
+    position: absolute;
+    z-index: 99;
+}
+
+.bottom-line{
+    position: relative;
+    margin-top: 5px;
+}
+.sendbutton {
+    position: relative;
+    margin: auto;
+}
+.sendbutton a{
+    text-decoration: none;
+    background-color: rgb(153,0,0);
+    padding: 7px 15px;
+    color: white;
+}
+
+.backbutton {
+    padding: 7px 15px;
+    text-decoration: none;
+    background-color: #555;
+    color: white;	
+}

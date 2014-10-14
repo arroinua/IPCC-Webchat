@@ -1,0 +1,527 @@
+/*--------------------ChatBox CSS--------------------*/
+
+/*-----Button Style Start-----*/
+#wc_sb {
+    position: fixed;
+    width: 35px;
+    top: 50%;
+    margin-top: -100px;
+    padding: 0;
+    cursor: pointer;
+    box-shadow: 0 0 2px #999, 0 0 2px #555 inset;
+    z-index: 999999;
+}
+.wc_div_text {
+    position: relative;
+    width: 100%;
+    top: 0;
+    margin: auto;
+    padding: 5px 0;
+}
+.wc_div_text span {
+    text-align: center;
+    text-shadow: 0 1px 2px #555;
+    padding: 0;
+    display: block;
+    line-height: 10px; 
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
+}
+.wc_div_img {
+    position: relative;
+    width: 100%;
+    height: 32px;
+    overflow: hidden;
+    margin: 0;
+    padding: 0; 
+    bottom: 0;
+    border-bottom: 2px solid #eee;
+}
+.wc_button_img {
+    position: relative;
+    left: 50%;
+    margin-left: -16px;
+    padding: 0;
+    width: 28px;
+}
+/*-----Button Style End-----*/
+.wc_cont {
+    position: fixed;
+    width: 250px;
+    height: 400px;
+    min-width: 250px;
+    min-height: 400px;
+    bottom: 0;
+    margin: 0;
+    padding: 0;
+    background-color: rgba(255,255,255,0.2);
+    border-style: solid;
+    border-width: 1px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    overflow: hidden;
+    -webkit-box-shadow: 0 0 2px rgba(0,0,0,0.4);
+    -moz-box-shadow: 0 0 2px rgba(0,0,0,0.4);
+    box-shadow: 0 0 2px rgba(0,0,0,0.4);
+    -webkit-transition: background-color 0.5s ease-in-out;
+    -moz-transition: background-color 0.5s ease-in-out;
+    -o-transition: background-color 0.5s ease-in-out;
+    transition: background-color 0.5s ease-in-out;
+    z-index: 999999;
+}
+
+.infobar-container{
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    text-align: center;
+    opacity: 0;
+    pointer-events: none; 
+    -webkit-transition: all .5s ease-in-out;
+    -moz-transition: all .5s ease-in-out;
+    -ms-transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;	
+    z-index: 20;
+}
+.infobar-text{
+    position: relative;
+    padding: 5px 20px;
+    color: #fff;
+    font-size: .9em;
+    background-color: #555;
+    background-color: rgba(0,0,0,0.5);
+}
+.wc_tooltip {
+    display: inline;
+    position: relative;
+}
+.wc_tooltip::after {
+    background: #fff;
+    background: rgba(255,255,255,0.9);
+    border: 1px dashed rgb(153,0,0);
+    border-radius: 5px;
+    bottom: 8px;
+    color: rgb(153,0,0);
+    font-size: 0.75em;
+    content: attr(data-title);
+    left: -100px;
+    padding: 5px;
+    position: absolute;
+    z-index: 98;
+    width: 200px;
+}
+.wc_tooltip::before {
+    border: solid;
+    border-color: rgb(153,0,0) transparent;
+    border-width: 8px 8px 0 8px;
+    bottom: 0;
+    content: "";
+    left: 0;
+    position: absolute;
+    z-index: 99;
+}
+label[for='acceptbla']::after{
+    bottom: 120%;
+    left: -70px;
+}
+label[for='acceptbla']::before{
+    bottom: 100%;
+    left: 20px;
+}
+label[for='phone']::after{
+    bottom: 8px;
+    left: -80px;
+}
+/*----- Complain & Send message Panel -----*/
+#wc_sendcomplain, #wc_sendmail {
+    position: relative;
+}
+#wc_sendcomplain div, #wc_sendmail div {
+    position: absolute;
+}
+#wc_sendmail input {
+    margin-bottom: 7px;
+}
+.wc_coheader {
+    text-align: center;
+    width: 100%;
+    height: 40%; 
+    top: 0;
+}
+.wc_backb {
+    position: relative;
+    padding: 5px 20px;
+    text-decoration: none;
+    color: #fff;
+}
+.wc_coheader p {
+    padding: 10px 5px;
+    margin: 0;
+    top: 0;
+    right: 0;
+}
+.wc_cobody {
+    text-align: center;
+    width: 100%;
+    height: 55%;
+    bottom: 0;
+}
+#wc_sendmail .wc_cobody {
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    height: 35%;
+    bottom: 0;
+}
+
+.wc_cobody textarea {
+    border: none;
+    border-top: 4px solid #aaa;
+    position: absolute;
+    margin: 0;
+    padding: 2px;
+    bottom: 0;
+    width: 100%;
+    height: 90%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    resize: none;
+}
+.wc_cobody textarea:focus {
+    border-top: 4px solid #999; 
+}
+/*----- End Complain panel -----*/
+#wc_chat, #wc_sendcomplain {
+    -webkit-transition: opacity .5s ease-in-out;
+    -moz-transition: opacity .5s ease-in-out;
+    -o-transition: opacity .5s ease-in-out;
+    -ms-transition: opacity .5s ease-in-out;
+    transition: opacity 0.5s ease-in-out;
+}
+.wc_panels div,textarea {
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+.wc_panels {
+    position: relative;
+    width: 100%; 
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; 
+}
+/*----- Prechat panel -----*/
+#wc_prechat * {
+    text-align: center;
+}
+#wr {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    padding-top: 20px;
+}
+.wc_bfield {
+    display: inline;
+    position: relative;
+    margin-bottom: 5px;
+    padding: 7px;
+    border: none;
+    width: 80%;
+    max-width: 200px;
+    box-shadow: 2px 0 2px #999 inset, -2px 0 2px #999 inset;
+}
+.wc_bfield:focus {
+    box-shadow: 2px 0 2px #222 inset, -2px 0 2px #222 inset;
+}
+.wc_sfield {
+    margin-bottom: 10px;
+    padding: 7px;
+}
+.wc_startB {
+    position: absolute;
+    right: 10px;
+    bottom: 30px; 
+    left: 10px;
+    padding: 10px 20px;
+    font-weight: bold;
+    text-decoration: none; 
+    color: #fff; 
+}
+.wc_closeB {
+    position: absolute;
+    right: 10px;
+    bottom: 70px;
+    left: 10px;
+    padding: 10px 20px; 
+    font-weight: bold;
+    text-decoration: none; 
+    background-color: #999; 
+    color: #fff;
+}
+
+/*----- End Prechat panel -----*/
+/*----- Terms&Conditions panel -----*/
+.wc_termsHeader {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 10px;
+    text-align: center;
+    z-index: 10;
+}
+.wc_termsBody {
+    position: relative;
+    height: 100%;
+    overflow: auto;
+}
+/*----- End Terms&Conditions panel -----*/
+/*----- Chat panel -----*/
+.wc_hw {
+    position: absolute;
+    width: 100%;
+    height: 20px;  
+    top: 0;
+    z-index: 20;
+}
+.wc_header {
+    position: relative; 
+    width: 100%; 
+    margin-top: -15px;
+    height: 24px;
+    z-index: 10;
+    -webkit-box-shadow: 0 2px 2px #ddd;
+    -moz-box-shadow: 0 2px 2px #ddd;
+    box-shadow: 0 2px 2px #ddd;
+    -webkit-transition: margin-top .6s ease;
+    -moz-transition: margin-top .6s ease;
+    -o-transition: margin-top .6s ease;
+    -ms-transition: margin-top .6s ease;
+    transition: margin-top .6s ease; 
+}
+.wc_header div {
+    display: inline-block;
+    position: absolute;
+}
+.wc_header img {
+    width: 18px;
+    height: 18px;
+    padding: 0 5px 5px 5px;
+    margin-right: 5px;
+}
+.wc_header img:hover {
+    background-color: rgba(0,0,0,0.2);
+}
+.wc_resize {
+    width: 20px;
+    height: 100%;
+    left: 0;
+    top: 0;
+    cursor: nw-resize;
+}
+.wc_wnavi {
+    height: 100%;
+    left: 20px;
+    right: 0;
+    cursor: move;
+}
+.wc_wnavi img {
+    float: right;
+    cursor: pointer;
+}
+#rfbody {
+    position: relative;
+    margin: auto;
+    padding: 0; 
+    height: 77%;
+    min-height: 35%;
+    max-height: 77%;
+    width: 100%; 
+    top: 0;
+    overflow: hidden;
+    background-color: #fff;
+}
+.wc_readfield { 
+    position: absolute;
+    margin: auto;
+    padding-top: 10px;
+    top: 18px;
+    right: 0;
+    bottom: 0; 
+    left: 0;
+    height: 99.5%;
+    overflow-y: auto; 
+    font-size: 1em;
+    word-wrap: break-word; 
+    z-index: 10;
+    background-color: #fff;
+    -webkit-transition: top .6s ease;
+    -moz-transition: top .6s ease;
+    -o-transition: top .6s ease;
+    -ms-transition: top .6s ease;
+    transition: top .6s ease; 
+}
+.wc_readfield>p {
+    position: relative;
+    display: block;
+    margin: 0;
+    padding: 5px;
+    border-bottom: 1px dashed #eee;
+}
+.wc_readfield>p:first-child {
+    margin-top: 10px;
+}
+.wc_udate { 
+    color: #999;
+}
+#logo {
+    position: absolute; 
+    top: 40%;
+    left: 0;
+    right: 0; 
+    bottom: 0;
+    height: auto;
+    width: 70%;
+    max-width: 300px;
+    margin: 0 auto;
+    padding: 0;
+    opacity: 0.1; 
+}
+.wc_bottomico {
+    position: relative; 
+    display: block;
+    z-index: 11;
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+    cursor: n-resize;
+    background-color: rgb(240,240,240);
+}
+.wc_bottomico:after {
+    content: '';
+    position: absolute;
+    width: 15%;
+    height: 1px;
+    background: #aaa;
+    top: 10px;
+    left: 20%;
+    box-shadow: 
+            0 4px 0 #aaa, 
+            0 8px 0 #aaa;
+}
+.wc_bottomico img {
+    position: inherit;
+    /*margin: 0 5px;*/
+    padding: 2px 5px;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    border: none;
+    z-index: 10;
+}
+#orating {
+    position: absolute;
+    top: -85px;
+    right: 6px;
+    background-color: rgba(0,0,0,0.7);
+    border-radius: 5px;
+}
+#orating span {
+    display: block;
+    padding: 2px 7px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #fff;
+}
+#orating span:hover {
+    color: rgb(255,0,0);
+}
+#orating .wc_activeRate {
+    color: rgb(255,0,0); 
+}
+.wc_leftfloat {
+    float: left;
+}
+.wc_rightfloat {
+    float: right;
+}
+.wc_writecont {
+    position: relative;
+    width: 100%;
+    height: 15%;
+    max-height: 60%;
+    min-height: 15%;
+    margin: 0;
+    border: none;
+    bottom: 0;
+}
+.wc_writefield {
+    position: absolute;
+    background-color: rgb(254,255,252);
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 2px;
+    border: none;
+    resize: none;
+    outline: none;
+} 
+.wc_sendspan {
+    position: absolute;
+    cursor: pointer; 
+    padding: 5px;
+    bottom: 5px;
+    right: 5px;
+    font-size: 1em;
+    color: #999;
+    opacity: 0.5;
+    z-index: 10;
+}
+.wc_sendspan:hover {
+    background-color: #999;
+    color: #fff;
+    opacity: 1;
+}
+/*----- End Chat panel -----*/
+/*-----Session Alert Panel-----*/
+#wc_sessiontimeout {
+    position: relative;
+    text-align: center;
+}
+#wc_sessiontimeout>p {
+    margin-top: 20px;
+    padding: 0;
+}
+.wc_emailIco {
+    cursor: pointer;
+    margin-left: auto;
+    padding: 175px 60px;
+    z-index: 30;
+}
+.wc_emailIco img {
+    width: 32px;
+}
+#wc_sessiontimeout div {
+    display: block;
+    position: absolute;
+    overflow: hidden;
+    width: 200px;
+    height: 100px;
+    top: 40%;
+    left: 50%;
+    margin-top: -50px;
+    margin-left: -100px; 
+    background-color: #eee;
+    border-radius: 5px;
+    border: 3px solid #999;
+    box-shadow: 0 0 5px #ccc; 
+    text-align: center;
+}

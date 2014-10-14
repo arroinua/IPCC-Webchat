@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <META content="text/html; charset=windows-1251" http-equiv="Content-Type">
+        <link rel="stylesheet" type="text/css" href="wchat.css">
+        
+    </head>
+    <body>
+        <div id="wc_cb" class="chat-container">
+            <div id="wc_prechat" class="cont-panel" style="display: none">
+                <img src="logo.png" alt="logo" class="company-logo">
+                <form>
+                    <label for="uname" id="uname-label" data-title="Заполните обязательные поля">Ваше Имя:<span style="color:red">*</span></label>
+                    <br>
+                    <input type="text" id="uname" autofocus maxlength="50">
+                    <br>
+                    <label for="phone" id="phone-label" data-title="Введите номер в правильном формате" >Номер телефона:</label>
+                    <br>
+                    <input type="text" id="phone" placeholder="Напр.: 0481234567">
+                    <br>
+                    <label for="subject">Тема запроса:</label> 
+                    <br>
+                    <input type="text" id="subject" maxlength="70">
+                    <br>
+                    <label for="selectlang">Язык общения:</label>
+                    <br>
+                    <select id="selectlang"></select>
+                    <br>
+                    <input type="checkbox" id="acceptbla"><label for="acceptbla" id="accept" data-title="Примите условия пользования" style="display:inline">я принимаю</label>
+                    <a href="conditions.html" target="_blank">условия пользования онлайн чатом</a><span style="color:red">*</span>
+                </form>
+                <div class="bottom-line">
+                    <span class="sendbutton"><a href="#" onclick="start_chat();return false">Начать чат</a></span>
+                    <a href="#" class="backbutton" onclick="close_chatWindow();return false">Закрыть чат</a>
+                </div>
+            </div>
+            <div id="wc_sendmail" class="cont-panel" style="display: none">
+                <img src="logo.png" alt="logo" class="company-logo">
+                <a href="#" title='Закрыть чат' class="wc_closechat_cross" onclick="close_chatWindow()"><img src="icons/cross.png" alt="close chat"></a>
+                <p>Пожалуйста оставьте сообщение, мы свяжемся с Вами в ближайшее время.</p>
+                <form>
+                    <label for="uname2">Ваше Имя: </label>
+                    <br>
+                    <input type="text" id="uname2">
+                    <br>
+                    <label for="email" id="email-label" data-title="Введите действительный Еmail">Ваш Email:<span style="color:red">*</span></label>
+                    <br>
+                    <input type="email" id="email">
+                    <br>
+                    <label for="phone2">Ваш Телефон: </label>
+                    <br>
+                    <input type="text" id="phone2">
+                    <br>
+                    <label for="textbody">Текст сообщения: </label>
+                    <br>
+                    <textarea id="textbody" maxlength="1500" placeholder="Введите ваше сообщение здесь..."></textarea>
+                    <label for="attachment">Приложить файл: </label><input type="file" id="attachment">
+                </form>
+                <div class="bottom-line">
+                    <span class="sendbutton"><a href="#" onclick="send_mail();return false">Отправить</a></span>
+                </div>
+            </div>
+            <div id="wc_thankyou" class="cont-panel" style="display: none">
+                <h1 style="text-align:center">Ваше сообщение отправлено. Мы свяжемся с Вами в ближайшее время. Спасибо за обращение!</h1>
+            </div>
+            <div id="wc_chat" class="cont-panel" style="display: none">
+                <img src="logo.png" alt="logo" class="company-logo">
+                <a href="#" title='Закрыть чат' class="wc_closechat_cross" onclick="close_chatWindow()"><img src="icons/cross.png" alt="close chat"></a>
+                <div id="readtext" class="chatfield"> </div>
+                <div class="icons-panel">
+                    <span style="float:left">
+                        <a href="#" id="complain" onclick="switch_tab('wc_sendcomplain'); return false" title="Пожаловаться на оператора"><img src="icons/complain.png" alt="Пожаловаться"></a>
+                    </span>
+                    <span style="float:left">
+                        <a href="#" id="sendchat" onclick="send_chat('sendchat'); return false" title="Отправить диалог по Email"><img src="icons/send.png" alt="Отправить диалог"></a>
+                    </span>
+                    <span style="float:left">
+                        <a href="#" id="sendfile" onclick="get_file('upload'); return false" title="Отправить файл"><img src="icons/file.png" alt="Отправить файл"></a>
+                    </span>
+                    <span style="float:right; overflow: hidden">
+                        <label for="rateagent">Оцените работу оператора: </label>
+                        <select id="rateagent">  
+                            <option value="0">  </option> 
+                            <option value="2">2</option> 
+                            <option value="3">3</option>
+                            <option value="4">4</option> 
+                            <option value="5">5</option> 
+                        </select>
+                    </span>
+                </div>
+                <textarea id="writetext" onkeypress="send_message_onkey(event)" maxlength="1500" placeholder="Введите ваше сообщение здесь..."></textarea> 
+                <div class="bottom-line">
+                    <a href="#" onclick="switch_sound(); return false" title="Выкл звуковой сигнал"><img src="icons/soundon.png" alt="Вкл/Выкл звук" id="switchsound"></a>
+                    <span class="sendbutton" style="float:right"><a href="#" id="sendmessage" onclick="send_message()">Отправить(Ctrl+Enter)</a></span>
+                </div>
+            </div> 
+            <div id="wc_sendcomplain" class="cont-panel" style="display: none;">
+                <img src="logo.png" alt="logo" class="company-logo">
+                <a href="#" title='Закрыть чат' class="wc_closechat_cross" onclick="close_chatWindow()"><img src="icons/cross.png" alt="close chat"></a>
+                <br>
+                <a href="#" class="backbutton" onclick="switch_tab('wc_chat'); return false">&lt;Назад</a>
+                <p style="margin-top:10px">Вы можете отправить сообщение администратору контакт-центра.</p>
+                <label for="email2" id="email2-label" data-title="Введите действительный Email">Ваш Email: </label>
+                <br>
+                <input type="email" class="cfield" id="email2">
+                <br>
+                <label for="textbody2">Текст сообщения:</label>
+                <br>
+                <textarea id="textbody2" maxlength="1500" placeholder="Введите ваше сообщение здесь..."></textarea>
+                <div class="bottom-line">
+                    <span class="sendbutton"><a href="#" onclick="send_complain(); return false">Отправить</a></span>
+                </div>
+            </div>
+            <div id="wc_sessiontimeout" class="cont-panel" style="display: none">
+                <img src="logo.png" alt="logo" class="company-logo">
+                <div>
+                    <p>Ваш диалог завершен. Выберите следующее действие:</p>
+                    <a href="#" onclick="send_chat('sendchat'); return false" style="background-color: #999;">Отправить диалог</a>
+                    <a href="#" onclick="init_chat(); return false">Начать диалог</a>
+                    <a href="#" onclick="window.close(); return false" style="background-color: #555;">Закрыть окно</a>
+                </div>
+            </div>
+        </div>
+        <div style="display: none">
+            <input type="file" id="upload" onchange="send_file()">
+        </div>
+        <audio id="sound">
+            <source src="sounds/notify.ogg" type="audio/ogg">
+            <source src="sounds/notify.mp3" type="audio/mpeg">
+        </audio>
+        <iframe name="download_target" style="display: none" width=220 height=200 frameborder="yes"></iframe>
+        <script type="text/javascript" src="js/wchat.js" defer></script>
+    </body>
+</html>
